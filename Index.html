@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – Quiz Bíblico</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card login-card">
+    <h1>Quiz Bíblico</h1>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" placeholder="Tu nombre" required />
+      </div>
+      <div class="form-group">
+        <label for="numero">Número</label>
+        <input type="number" id="numero" placeholder="Tu número" required />
+      </div>
+      <button type="submit" class="btn">Ingresar</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value.trim();
+      const numero = document.getElementById("numero").value.trim();
+      if (!nombre || !numero) return;
+      localStorage.setItem("nombre", nombre);
+      localStorage.setItem("numero", numero);
+      localStorage.removeItem("puntos");
+      localStorage.setItem("jugado", "false");
+      window.location.href = "ready.html";
+    });
+  </script>
+</body>
+</html>

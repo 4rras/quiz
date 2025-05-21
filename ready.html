@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Preparados – Quiz Bíblico</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <h2>¿Estás listo, <span id="nombreUsuario"></span>?</h2>
+    <button class="btn" id="startBtn">¡Sí, comenzar!</button>
+  </div>
+
+  <script>
+    const nombre = localStorage.getItem("nombre");
+    const numero = localStorage.getItem("numero");
+    const jugado = localStorage.getItem("jugado");
+    if (!nombre || !numero) {
+      document.body.innerHTML = "<h2>No iniciaste sesión.</h2>";
+    } else if (jugado === "true") {
+      document.body.innerHTML = "<h2>Ya completaste el quiz.</h2>";
+    } else {
+      document.getElementById("nombreUsuario").textContent = nombre;
+      document.getElementById("startBtn").addEventListener("click", () => {
+        window.location.href = "quiz.html";
+      });
+    }
+  </script>
+</body>
+</html>

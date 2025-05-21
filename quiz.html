@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Bíblico</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Contenedor de preguntas -->
+  <div class="card" id="question-card">
+    <div class="timer">Tiempo: <span id="tiempo">15</span>s</div>
+    <h2 id="pregunta"></h2>
+    <div id="opciones" class="options"></div>
+    <div class="progress">
+      Pregunta <span id="numPregunta">1</span> de <span id="totalPreguntas">25</span>
+    </div>
+  </div>
+
+  <!-- Contenedor de resultados -->
+  <div class="card hidden" id="result-card">
+    <h2>¡Quiz finalizado!</h2>
+    <table id="resultTable">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Número</th>
+          <th>Puntaje</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
